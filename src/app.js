@@ -6,6 +6,7 @@ const geocode = require('./utils/geocode');
 const { response } = require('express');
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 const publicDirectoryPath = path.join(__dirname, '../public');
 const viewsDirectory = path.join(__dirname, '../templates/views');
@@ -84,6 +85,6 @@ app.get('*', (req, res) => {
   });
 });
 
-app.listen(8000, () => {
-  console.log('Currently connected on port 8000');
+app.listen(port, () => {
+  console.log(`Currently connected on port ${port}`);
 });
